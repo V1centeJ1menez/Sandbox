@@ -1,0 +1,56 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+
+#container {
+    width: 100vw; /* Ancho del contenedor */
+    height: 100vh; /* Alto del contenedor */
+    overflow: hidden; /* Para evitar que el svg se mueva fuera de los límites */
+    display: flex;
+    position: relative; /* Posición relativa para el ajuste de posiciones absolutas */
+}
+
+#bouncing-svg {
+    position: absolute; /* Posición absoluta dentro del contenedor */
+    width: 100px; /* Establecer un tamaño predeterminado */
+    height: 100px; /* Establecer un tamaño predeterminado */
+    z-index: 1; /* Asegurar que esté por encima del footer */
+    transform-origin: center; /* Para que el rebote sea centrado */
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    padding: 10px 0;
+    border-top: 2px solid #ccc;
+    z-index: 2; /* Asegurar que esté por encima del SVG */
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+#no-svg-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255); /* Fondo semi-transparente */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#parar:disabled {
+    background-color: gray; /* Cambiar color de fondo cuando el botón esté deshabilitado */
+}
